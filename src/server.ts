@@ -6,6 +6,8 @@ import { db } from './config/database'
 import vipsRoute from './routes/vips.route'
 const PORT = 3000
 const app: Application = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 db.authenticate()
   .then(async () => {
@@ -15,6 +17,6 @@ db.authenticate()
   })
   .catch((err) => console.error('Unable to connect to the database:', err))
 
-app.use('/api/vips', requireAuth, vipsRoute(db))
+app.use('/api/vips', requireAuth, vipsRoute())
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
