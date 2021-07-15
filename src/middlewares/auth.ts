@@ -10,10 +10,13 @@ export const requireAuth = (
 ) => {
   const username = req.query.username
   const password = req.query.password
+
   if (username && password) {
-    if (username !== ACCOUNT_NAME && password !== SECRET_KEY) {
+    if (username === ACCOUNT_NAME && password === SECRET_KEY) {
+      next()
+    } else {
       return res.status(400).json('authentication failed')
-    } else next()
+    }
   } else {
     return res.status(400).json('not verified')
   }
