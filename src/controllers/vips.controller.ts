@@ -22,7 +22,7 @@ export const handleVipsGet = async (req: Request, res: Response) => {
 export const handleVipsGetById = async (req: Request, res: Response) => {
   try {
     const id = req.params.id
-    const vip = await VIP.findAll({ where: { id: id } })
+    const vip = await VIP.findByPk(id)
     res
       .status(200)
       .json(createResponseBody({ ok: true, data: vip, message: 'success' }))
