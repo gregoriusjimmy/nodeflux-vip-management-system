@@ -1,10 +1,11 @@
+import express, { Application } from 'express'
+import vipsRoute from './routes/vips.route'
 import { initializeDummyData } from './utilities/initializeDummyData'
 import { synchronizeModel } from './utilities/synchronizeModel'
-import express, { Application } from 'express'
-import { requireAuth } from './middlewares/auth'
+import { requireAuth } from './middleware/auth'
 import { db } from './config/database'
-import vipsRoute from './routes/vips.route'
-const PORT = 3000
+import { PORT } from './config/constants'
+
 const app: Application = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

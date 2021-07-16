@@ -1,18 +1,16 @@
+import { STAFF_USERNAME, SECRET_TOKEN } from './../config/constants'
 import { Request, Response, NextFunction } from 'express'
-
-const SECRET_KEY: string = 'stafftoken'
-const ACCOUNT_NAME: string = 'staffusername'
 
 export const requireAuth = (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
+  // it is possible to implement jwt here
   const username = req.query.username
   const password = req.query.password
-
   if (username && password) {
-    if (username === ACCOUNT_NAME && password === SECRET_KEY) {
+    if (username === STAFF_USERNAME && password === SECRET_TOKEN) {
       next()
     } else {
       return res.status(400).json('authentication failed')

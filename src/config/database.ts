@@ -1,13 +1,14 @@
 import { Sequelize } from 'sequelize'
-
-const databaseName = 'vip_management_system'
-const databaseUsername = 'postgres'
-const databasePassword = 'admin'
+import {
+  DATABASE_NAME,
+  DATABASE_PASSWORD,
+  DATABASE_USERNAME,
+} from './constants'
 
 export const db = new Sequelize(
-  databaseName,
-  databaseUsername,
-  databasePassword,
+  DATABASE_NAME,
+  DATABASE_USERNAME,
+  DATABASE_PASSWORD,
   {
     host: 'localhost',
     dialect: 'postgres',
