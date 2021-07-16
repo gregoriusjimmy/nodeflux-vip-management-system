@@ -7,11 +7,14 @@ export const requireAuth = (
   next: NextFunction
 ) => {
   // it is possible to implement jwt here
+  const token = req.cookies.token
+  if (token === SECRET_TOKEN) return next()
+
   const username = req.query.username
   const password = req.query.password
   if (username && password) {
     if (username === STAFF_USERNAME && password === SECRET_TOKEN) {
-      next()
+      return next()
     } else {
       return res.status(400).json('authentication failed')
     }
