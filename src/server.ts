@@ -1,5 +1,6 @@
 import express, { Application } from 'express'
 import cookieParser from 'cookie-parser'
+import cors from 'cors'
 import vipsRoute from './routes/vips.route'
 import loginRoute from './routes/login.route'
 import { initializeDummyData } from './utilities/initializeDummyData'
@@ -10,6 +11,7 @@ import { PORT } from './config/constants'
 
 const app: Application = express()
 app.use(cookieParser())
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
