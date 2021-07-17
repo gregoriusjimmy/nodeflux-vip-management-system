@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import { SECRET_TOKEN, STAFF_USERNAME } from '../config/constants'
+import { createResponseBody } from '../utilities/createResponseBody'
 
 const MAX_AGE = 1 * 60 * 60
 
@@ -10,6 +11,11 @@ export const handleLoginPost = (req: Request, res: Response) => {
       httpOnly: true,
       maxAge: MAX_AGE * 1000,
     })
-    res.status(200).json('login successful')
-  } else res.status(400).json('wrong username or password')
+    res.status(200).json(createResponseBody({ ok: true, message: 'success' }))
+  } else
+    res
+      .status(400)
+      .json(
+        createResponseBody({ ok: false, message: 'wrong username or password' })
+      )
 }

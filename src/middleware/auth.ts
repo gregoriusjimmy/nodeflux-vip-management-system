@@ -6,7 +6,9 @@ export const requireAuth = (
   res: Response,
   next: NextFunction
 ) => {
-  // it is possible to implement jwt here
+  // if the user has logged in from client view we use the cookie
+  // to do authentication else, we protect the apis with params
+  // it is also possible to implement jwt here
   const token = req.cookies.token
   if (token === SECRET_TOKEN) return next()
 
