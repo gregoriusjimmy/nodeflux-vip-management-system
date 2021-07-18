@@ -97,7 +97,6 @@ export const handleVipsPatchArrived = async (req: Request, res: Response) => {
   try {
     const id = req.params.id
     const { arrived } = req.body
-    if (!arrived) throw Error('arrived cannot be empty')
     await VIP.update({ arrived: arrived }, { where: { id: id } })
     res
       .status(200)

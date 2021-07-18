@@ -32,11 +32,13 @@ VIP.init(
     arrived: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
+      allowNull: false,
     },
     photo: {
       type: DataTypes.STRING,
       defaultValue:
         'https://i.ibb.co/Btk2Lmn/blank-profile-picture-973460-640.png?w=640&h=640',
+      allowNull: false,
     },
     attributes: {
       type: DataTypes.JSON,
