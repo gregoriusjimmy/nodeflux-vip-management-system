@@ -13,7 +13,7 @@ const VipTableRow = ({ vip }) => {
       <TableCell>
         {moment(vip.eta).tz('Japan').format('DD-MM-YYYY h:mm:ss')}
       </TableCell>
-      <TableCell>{vip.arrived ? '❎' : '❌'}</TableCell>
+      <TableCell>{vip.arrived ? '✅' : '❌'}</TableCell>
       <TableCell>
         <img src={vip.photo} alt='Profile picture' width='100' height='100' />
       </TableCell>
