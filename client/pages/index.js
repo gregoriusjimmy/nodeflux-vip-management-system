@@ -5,7 +5,7 @@ import { API_URL } from '../constants'
 import { TextField, Button, Typography } from '@material-ui/core'
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
-export default function Home() {
+export const Home = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
@@ -70,3 +70,5 @@ export default function Home() {
     </Layout>
   )
 }
+
+export default Home
