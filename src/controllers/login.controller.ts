@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import { SECRET_TOKEN, STAFF_USERNAME } from '../config/constants'
 import { createResponseBody } from '../utilities/createResponseBody'
 
-const MAX_AGE = 1 * 60 * 60
+const MAX_AGE = 24 * 60 * 60
 
 export const handleLoginPost = (req: Request, res: Response) => {
   const { username, password } = req.body
