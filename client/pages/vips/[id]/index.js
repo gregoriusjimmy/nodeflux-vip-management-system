@@ -6,12 +6,15 @@ import { Switch, FormControlLabel } from '@material-ui/core'
 import styles from '../../../styles/VipIndex.module.css'
 import { Link } from '@material-ui/core'
 import moment from 'moment-timezone'
+import { useRouter } from 'next/router'
+
 export const VipIndex = ({ vip }) => {
   const [isArrived, setIsArrived] = useState(vip.arrived)
+  const { id } = useRouter().query
   const toggleIsArrived = () => {
     axios
       .patch(
-        `${API_URL}vips/${vip.id}/arrived`,
+        `${API_URL}vips/${id}/arrived`,
         { arrived: !isArrived },
         {
           withCredentials: true,
