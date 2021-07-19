@@ -6,12 +6,17 @@ export const requireAuth = (
   res: Response,
   next: NextFunction
 ) => {
-  // it is possible to implement jwt here
+  // if the user has logged in from client view we use the cookie
+  // to do authentication else, we protect the apis with params
+  // it is also possible to implement jwt here
+  const token = req.cookies.token
+  if (token === SECRET_TOKEN) return next()
+
   const username = req.query.username
   const password = req.query.password
   if (username && password) {
     if (username === STAFF_USERNAME && password === SECRET_TOKEN) {
-      next()
+      return next()
     } else {
       return res.status(400).json('authentication failed')
     }

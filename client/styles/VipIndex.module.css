@@ -1,0 +1,55 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile {
+  display: flex;
+  justify-content: center;
+}
+
+.backButton {
+  color: black;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  display: block;
+}
+.imageContainer {
+  margin-right: 100px;
+}
+
+.vipPhoto {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 100%;
+  max-width: 300px;
+  max-height: 500px;
+  border-radius: 20px;
+}
+
+.vipName {
+  font-size: 2rem;
+}
+.vipCountry {
+  font-size: 1.5rem;
+}
+
+.vipEta {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.vipArrived {
+  color: #3cfa4f;
+}
+.vipNotArrived {
+  color: #fa3c3c;
+}
+
+.switchContainer {
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 40px;
+}
