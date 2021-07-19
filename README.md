@@ -139,7 +139,11 @@ _you can change username and password in constant.ts file_
 2. login, the default username and password are staffusername and staffpassword
 3. Explore!
 
+<br/>
+
 ---
+
+<br/>
 
 #### Potential issues
 
