@@ -115,7 +115,7 @@ Key input in body request :
 http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
 
 **Put**  
-Key input in body request same as Post method
+Key input in body request same as Post method  
 http://localhost:5000/api/vips/[id]?username=staffusername&password=stafftoken
 
 **Patch**  
