@@ -95,7 +95,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Accessing the api
 
-Your can initialize dummy data as a start automatically in `src > utilities > initializeDummyData.ts`. Don't forget to re-run the server again after changes.
+You can initialize dummy data as a start automatically in `src > utilities > initializeDummyData.ts`. Don't forget to re-run the server again after changes.
 
 **Get**  
 http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
@@ -103,7 +103,7 @@ http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
 http://localhost:5000/api/vips/[id]?username=staffusername&password=stafftoken
 
 **Post**  
-Key input in body request :
+Key in body request :
 
 | key               | type     |
 | ----------------- | -------- |
@@ -117,11 +117,11 @@ example of eta : 2021-07-15T11:25:27.194Z
 http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
 
 **Put**  
-Key input in body request same as Post method  
+Key in body request same as Post method  
 http://localhost:5000/api/vips/[id]?username=staffusername&password=stafftoken
 
 **Patch**  
-Key input in body request :
+Key in body request :
 
 | key     | type    |
 | ------- | ------- |
