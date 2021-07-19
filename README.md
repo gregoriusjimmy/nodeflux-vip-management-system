@@ -148,4 +148,4 @@ _you can change username and password in constant.ts file_
 #### Future ideation
 
 - User should able to find vips member by searching their name.
-- Filter by arrived and not arrived combined with the closest eta in current time.
+- Filter by arrived and not arrived combined with the closest eta from current time.
