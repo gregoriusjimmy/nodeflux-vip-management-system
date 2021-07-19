@@ -13,7 +13,7 @@
 
 ## About The Project
 
-[![VIP Management System Screen Shot][product-screenshot]](docs/images/project-show.jpg)
+![VIP Management System Screen Shot](docs/images/project-show.jpg)
 
 This project was made to submit software engineer internship technical assessment by [nodeflux](https://www.nodeflux.io/). This app intended to answer questions number 1 and 2.
 
