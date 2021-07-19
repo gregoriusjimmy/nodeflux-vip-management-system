@@ -47,7 +47,7 @@ This is an example of how to list things you need to use the software and how to
 #### Configuration
 
 1. Create a database using [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-2. Set your database configurations like database's name, username, and password in src > config > constants.ts
+2. Set your database configurations like database's name, username, and password in `src > config > constants.ts`
 
 #### Installation
 
@@ -73,10 +73,10 @@ This is an example of how to list things you need to use the software and how to
 
 1. In new window terminal
 
-```sh
-cd client
-npm install
-```
+   ```sh
+   cd client
+   npm install
+   ```
 
 #### Running on local machine
 
@@ -97,7 +97,7 @@ npm install
 
 ### Accessing the api
 
-Your can initialize dummy data as a start automatically in src > utilities > initializeDummyData.ts. Don't forget to re-run the server again after changes.
+Your can initialize dummy data as a start automatically in `src > utilities > initializeDummyData.ts`. Don't forget to re-run the server again after changes.
 
 **Get**  
 http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
@@ -107,10 +107,14 @@ http://localhost:5000/api/vips/[id]?username=staffusername&password=stafftoken
 **Post**  
 Key input in body request :
 
-- name : string
-- country_of_origin : string
-- eta : datetime , example : 2021-07-15T11:25:27.194Z
-- arrived : boolean
+| key               | type     |
+| ----------------- | -------- |
+| name              | string   |
+| country_of_origin | string   |
+| eta               | datetime |
+| arrived           | boolean  |
+
+example of eta : 2021-07-15T11:25:27.194Z
 
 http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
 
@@ -121,7 +125,9 @@ http://localhost:5000/api/vips/[id]?username=staffusername&password=stafftoken
 **Patch**  
 Key input in body request :
 
-- arrived : boolean
+| key     | type    |
+| ------- | ------- |
+| arrived | boolean |
 
 http://localhost:5000/api/vips/[id]/arrived?username=staffusername&password=stafftoken
 
