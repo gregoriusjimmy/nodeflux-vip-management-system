@@ -134,7 +134,7 @@ _you can change username and password in constant.ts file_
 ### Using the client side
 
 1. Go to http://localhost:3000/
-2. login, the default username and password are staffusername and staffpassword
+2. login, the default username and password are staffusername and stafftoken
 3. Explore!
 
 ---
