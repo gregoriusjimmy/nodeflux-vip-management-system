@@ -113,6 +113,7 @@ Key in body request :
 | arrived           | boolean  |
 | photo             | string   |
 | attributes        | array    |
+
 example of eta : 2021-07-15T11:25:27.194Z
 
 http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
