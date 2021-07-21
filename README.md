@@ -111,7 +111,8 @@ Key in body request :
 | country_of_origin | string   |
 | eta               | datetime |
 | arrived           | boolean  |
-
+| photo             | string   |
+| attributes        | array    |
 example of eta : 2021-07-15T11:25:27.194Z
 
 http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
