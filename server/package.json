@@ -1,0 +1,36 @@
+{
+  "name": "nodeflux-vip-management-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon --legacy-watch src/server.ts",
+    "dev-client": "cd client && npm run dev",
+    "build": "tsc -p .",
+    "dev-both": "concurrently --kill-others \"npm run dev\" \"npm run dev-client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.4",
+    "@types/node": "^16.3.2",
+    "@types/sequelize": "^4.28.10",
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^5.21.3"
+  }
+}
