@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import { API_URL } from '../constants'
 import { TextField, Button, Typography } from '@material-ui/core'
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
@@ -13,11 +12,7 @@ export const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post(
-        API_URL + 'login',
-        { username, password },
-        { withCredentials: true }
-      )
+      .post('api/login', { username, password }, { withCredentials: true })
       .then((res) => {
         if (res.data.ok) {
           router.push('/vips')

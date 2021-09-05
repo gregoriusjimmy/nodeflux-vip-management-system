@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Layout from '../../../components/Layout'
 import axios from 'axios'
-import { API_URL } from '../../../constants'
 import { Switch, FormControlLabel } from '@material-ui/core'
 import styles from '../../../styles/VipIndex.module.css'
 import { Link } from '@material-ui/core'
 import moment from 'moment-timezone'
 import { useRouter } from 'next/router'
+import buildClient from '../../api/build-client'
 
 export const VipIndex = ({ vip }) => {
   const [isArrived, setIsArrived] = useState(vip.arrived)
@@ -14,7 +14,7 @@ export const VipIndex = ({ vip }) => {
   const toggleIsArrived = () => {
     axios
       .patch(
-        `${API_URL}vips/${id}/arrived`,
+        `/api/vips/${id}/arrived`,
         { arrived: !isArrived },
         {
           withCredentials: true,
@@ -77,11 +77,9 @@ export const VipIndex = ({ vip }) => {
   )
 }
 
-export const getServerSideProps = async ({ req, params }) => {
-  const res = await axios.get(`${API_URL}vips/${params.id}`, {
-    headers: { cookie: req.headers.cookie },
-    withCredentials: true,
-  })
+export const getServerSideProps = async (context) => {
+  const client = buildClient(context)
+  const res = await client.get(`/api/vips/${context.params.id}`)
 
   if (res.data.ok) {
     return {
