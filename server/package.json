@@ -6,9 +6,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon --legacy-watch src/server.ts",
-    "dev-client": "cd client && npm run dev",
     "build": "tsc -p .",
-    "dev-both": "concurrently --kill-others \"npm run dev\" \"npm run dev-client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -31,6 +29,6 @@
     "express": "^4.17.1",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^5.21.3"
+    "sequelize": "^6.6.5"
   }
 }
