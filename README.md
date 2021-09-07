@@ -21,6 +21,7 @@ This project was made to submit software engineer internship technical assessmen
 
 - [Node.js](https://nodejs.org/en/)
 - Next.js
+- Docker
 
 <!-- GETTING STARTED -->
 
@@ -30,68 +31,29 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This is an example of how to list things you need to use the software and how to run them with docker.
 
-- Have node.js installed
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- Have [docker](https://www.docker.com/products/docker-desktop) installed
 - Clone the repo
   ```sh
   https://github.com/gregoriusjimmy/nodeflux-vip-management-system.git
   ```
 
-### Server side
+### Running with docker
 
-#### Configuration
+#### Development
 
-1. Create a database using [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-2. Set your database configurations like database's name, username, and password in `src > config > constants.ts`
+```sh
+docker-compose up --build
+```
 
-#### Installation
+#### Production
 
-2. Install NPM packages for the server side
-   ```sh
-   npm install
-   ```
+```sh
+docker-compose -f docker-compose-prod.yml up --build
+```
 
-#### Running on local machine
-
-1. ```sh
-   npm run dev
-   ```
-2. Or you can build by doing
-   ```sh
-   npm run build
-   npm run start
-   ```
-
-### Client side
-
-#### Installation
-
-1. In new window terminal
-
-   ```sh
-   cd client
-   npm install
-   ```
-
-#### Running on local machine
-
-1. ```sh
-   npm run dev
-   ```
-2. Or you can build by doing
-   ```sh
-   npm run build
-   npm run start
-   ```
-   It will be available in http://localhost:3000/
-   <!-- USAGE EXAMPLES -->
-
-> if you have installed both server and client side and want to run both in same terminal you could do `npm run dev-both`
+App will be available in http://localhost:3050
 
 ## Usage
 
@@ -100,9 +62,9 @@ This is an example of how to list things you need to use the software and how to
 Your can initialize dummy data as a start automatically in `src > utilities > initializeDummyData.ts`. Don't forget to re-run the server again after changes.
 
 **Get**  
-http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
+http://localhost:3050/api/vips/?username=staffusername&password=stafftoken
 
-http://localhost:5000/api/vips/[id]?username=staffusername&password=stafftoken
+http://localhost:3050/api/vips/[id]?username=staffusername&password=stafftoken
 
 **Post**  
 Key input in body request :
@@ -116,11 +78,11 @@ Key input in body request :
 
 example of eta : 2021-07-15T11:25:27.194Z
 
-http://localhost:5000/api/vips/?username=staffusername&password=stafftoken
+http://localhost:3050/api/vips/?username=staffusername&password=stafftoken
 
 **Put**  
 Key input in body request same as Post method  
-http://localhost:5000/api/vips/[id]?username=staffusername&password=stafftoken
+http://localhost:3050/api/vips/[id]?username=staffusername&password=stafftoken
 
 **Patch**  
 Key input in body request :
@@ -129,13 +91,13 @@ Key input in body request :
 | ------- | ------- |
 | arrived | boolean |
 
-http://localhost:5000/api/vips/[id]/arrived?username=staffusername&password=stafftoken
+http://localhost:3050/api/vips/[id]/arrived?username=staffusername&password=stafftoken
 
 _you can change username and password in constant.ts file_
 
 ### Using the client side
 
-1. Go to http://localhost:3000/
+1. Go to http://localhost:3050/
 2. login, the default username and password are staffusername and staffpassword
 3. Explore!
 
