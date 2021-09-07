@@ -7,7 +7,6 @@ import { initializeDummyData } from './utilities/initializeDummyData'
 import { synchronizeModel } from './utilities/synchronizeModel'
 import { requireAuth } from './middleware/auth'
 import { db } from './config/database'
-import { PORT } from './config/constants'
 
 const app: Application = express()
 app.use(cookieParser())
@@ -26,4 +25,4 @@ db.authenticate()
 app.use('/api/login', loginRoute())
 app.use('/api/vips', requireAuth, vipsRoute())
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+app.listen(5000, () => console.log(`Server running on port 5000`))

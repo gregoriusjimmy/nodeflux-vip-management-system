@@ -9,7 +9,7 @@ export class VIP extends Model {
   public eta!: Date
   public arrived!: boolean
   public photo!: string
-  public attributes?: string
+  public attributes?: string[]
 
   public readonly createdAt!: Date
   public readonly updatedAt!: Date
@@ -42,7 +42,7 @@ VIP.init(
     },
     attributes: {
       type: DataTypes.JSON,
-      set(value) {
+      set(value: string[]) {
         if (typeof value === 'string' || value instanceof String) {
           const array = convertStringToArray(value)
           this.setDataValue('attributes', array)

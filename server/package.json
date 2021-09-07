@@ -2,13 +2,11 @@
   "name": "nodeflux-vip-management-system",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "start": "node dist/server.js",
-    "dev": "nodemon src/server.ts",
-    "dev-client": "cd client && npm run dev",
+    "dev": "nodemon --legacy-watch src/server.ts",
     "build": "tsc -p .",
-    "dev-both": "concurrently --kill-others \"npm run dev\" \"npm run dev-client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
