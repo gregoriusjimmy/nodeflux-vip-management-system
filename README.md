@@ -34,6 +34,12 @@ To get a local copy up and running follow these simple steps.
 This is an example of how to list things you need to use the software and how to run them with docker.
 
 - Have [docker](https://www.docker.com/products/docker-desktop) installed
+- Have node.js installed
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
 - Clone the repo
   ```sh
   https://github.com/gregoriusjimmy/nodeflux-vip-management-system.git
@@ -59,7 +65,7 @@ App will be available in http://localhost:3050
 
 ### Accessing the api
 
-Your can initialize dummy data as a start automatically in `src > utilities > initializeDummyData.ts`. Don't forget to re-run the server again after changes.
+You can initialize dummy data as a start automatically in `src > utilities > initializeDummyData.ts`. Don't forget to re-run the server again after changes.
 
 **Get**  
 http://localhost:3050/api/vips/?username=staffusername&password=stafftoken
@@ -67,7 +73,7 @@ http://localhost:3050/api/vips/?username=staffusername&password=stafftoken
 http://localhost:3050/api/vips/[id]?username=staffusername&password=stafftoken
 
 **Post**  
-Key input in body request :
+Key in body request :
 
 | key               | type     |
 | ----------------- | -------- |
@@ -75,6 +81,8 @@ Key input in body request :
 | country_of_origin | string   |
 | eta               | datetime |
 | arrived           | boolean  |
+| photo             | string   |
+| attributes        | array    |
 
 example of eta : 2021-07-15T11:25:27.194Z
 
@@ -85,7 +93,7 @@ Key input in body request same as Post method
 http://localhost:3050/api/vips/[id]?username=staffusername&password=stafftoken
 
 **Patch**  
-Key input in body request :
+Key in body request :
 
 | key     | type    |
 | ------- | ------- |
@@ -112,4 +120,4 @@ _you can change username and password in constant.ts file_
 #### Future ideation
 
 - User should able to find vips member by searching their name.
-- Filter by arrived and not arrived combined with the closest eta in current time.
+- Filter by arrived and not arrived combined with the closest eta from current time.
