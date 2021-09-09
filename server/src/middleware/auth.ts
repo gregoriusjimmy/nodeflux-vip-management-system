@@ -12,15 +12,31 @@ export const requireAuth = (
   const token = req.cookies.token
   if (token === SECRET_TOKEN) return next()
 
-  const username = req.query.username
-  const password = req.query.password
-  if (username && password) {
+  // const username = req.query.username
+  // const password = req.query.password
+  // if (username && password) {
+    // if (username === STAFF_USERNAME && password === SECRET_TOKEN) {
+    //   return next()
+    // } else {
+    //   return res.status(400).json('authentication failed')
+    // }
+  // } else {
+  //   return res.status(400).json('not verified')
+  // }
+
+  // Using basic authentication instead params for security purposes
+  const authHeader = req.headers.authorization;
+  if(authHeader){
+    let auth = Buffer.from(authHeader.split(' ')[1],'base64').toString().split(':');
+    const username = auth[0];
+    const password = auth[1];
     if (username === STAFF_USERNAME && password === SECRET_TOKEN) {
       return next()
     } else {
       return res.status(400).json('authentication failed')
     }
-  } else {
-    return res.status(400).json('not verified')
   }
+  res.set('WWW-Authenticate', 'Basic')
+  return res.status(401).send('Authentication required.')
+  
 }
