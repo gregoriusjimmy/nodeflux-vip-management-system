@@ -1,11 +1,11 @@
 import axios from 'axios'
+import { SERVER_HOST } from '../../constant'
 
 export default ({ req }) => {
   if (typeof window === 'undefined') {
     // We are on the server
-
     return axios.create({
-      baseURL: 'http://server:5000',
+      baseURL: `http://${SERVER_HOST}:5000`,
       headers: req.headers,
       withCredentials: true,
     })
