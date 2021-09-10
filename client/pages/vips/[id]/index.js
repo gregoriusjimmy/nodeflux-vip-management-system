@@ -7,6 +7,7 @@ import { Link } from '@material-ui/core'
 import moment from 'moment-timezone'
 import { useRouter } from 'next/router'
 import buildClient from '../../api/build-client'
+import { SERVER_HOST } from '../../../constant'
 
 export const VipIndex = ({ vip }) => {
   const [isArrived, setIsArrived] = useState(vip.arrived)
@@ -14,11 +15,8 @@ export const VipIndex = ({ vip }) => {
   const toggleIsArrived = () => {
     axios
       .patch(
-        `/api/vips/${id}/arrived`,
-        { arrived: !isArrived },
-        {
-          withCredentials: true,
-        }
+        `http://${SERVER_HOST}:5000/api/vips/${id}/arrived`,
+        { arrived: !isArrived }, { withCredentials: true }
       )
       .then((res) => {
         if (res.data.ok) {

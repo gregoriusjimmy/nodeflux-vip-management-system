@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { TextField, Button, Typography } from '@material-ui/core'
+import { SERVER_HOST } from '../constant'
+
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
 export const Home = () => {
@@ -12,7 +14,7 @@ export const Home = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios
-      .post('api/login', { username, password }, { withCredentials: true })
+      .post(`http://${SERVER_HOST}:5000/api/login`, { username, password }, { withCredentials: true })
       .then((res) => {
         if (res.data.ok) {
           router.push('/vips')

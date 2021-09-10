@@ -10,7 +10,7 @@ import { db } from './config/database'
 
 const app: Application = express()
 app.use(cookieParser())
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
+app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'http://localhost:3050'] }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 

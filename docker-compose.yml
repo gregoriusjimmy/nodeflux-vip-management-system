@@ -41,5 +41,10 @@ services:
     volumes:
       - /app/node_modules
       - ./client:/app
+    environment: 
+      - SERVER_HOST=server
+    depends_on:
+      - server
+  
 volumes:
   server-db:
